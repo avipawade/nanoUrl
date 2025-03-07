@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const short_url_controller_1 = require("../controllers/short-url.controller");
+const router = (0, express_1.Router)();
+router.post("/short-url", short_url_controller_1.createUrl);
+router.get("/short-url", short_url_controller_1.getAllUrl);
+router.get("/short-url/:id", short_url_controller_1.getUrl);
+router.delete("/short-url/:id", short_url_controller_1.deleteUrl);
+exports.default = router;
