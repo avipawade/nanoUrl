@@ -16,10 +16,11 @@ app.use(cors({
         "http://localhost:5173",
         "http://localhost:3000"
     ],
-    credentials: true
+    credentials: true,
+    optionsSuccessStatus: 200
 }));
-app.use("/api/", shortUrl);
-
+app.options("*", cors());
+app.use("/api", shortUrl);
 
 connectDB();
 

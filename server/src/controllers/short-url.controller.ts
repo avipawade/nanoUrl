@@ -20,10 +20,6 @@ export const createUrl = async (req: Request, res: Response): Promise<void> => {
 export const getAllUrl = async (req: Request, res: Response) => {
     try {
         const shortUrls = await UrlModel.find().sort({ createdAt: -1 });
-        if(shortUrls.length <= 0) {
-            res.status(404).json({ message: "short urls not found" });
-            return;
-        }
         res.status(200).json({ message: "urls found successfully", shortUrls });
     } catch (error) {
         res.status(500).json({ message: "something went wrong while fetching short url" });
