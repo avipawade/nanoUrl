@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "backend for a url shortner web application",
   "license": "ISC",
-  "author": "Yash Salunke",
+  "author": "Avinash Pawade",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec ts-node src/index.ts",
     "build": "tsc -b",
     "start": "node dist/index.js",
+    "render-start": "npm run build && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
